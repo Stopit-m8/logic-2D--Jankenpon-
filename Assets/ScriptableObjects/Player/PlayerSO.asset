@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6d032440a2a184487fcca728d3aa6e, type: 3}
+  m_Name: PlayerSO
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerScriptableObject
+  playerSprite: {fileID: 815424164945274260, guid: 0455767a9232cd14ebe1f1c237a7ed4e, type: 3}
+  animatorController: {fileID: 9100000, guid: 523836fee4e402747817bdc98ab3d128, type: 2}
+  maxHealth: 100
+  damage: 10
