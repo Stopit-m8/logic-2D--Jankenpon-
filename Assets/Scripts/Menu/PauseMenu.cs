@@ -13,7 +13,7 @@ public class PauseMenu : MonoBehaviour
         isOpen = false;
     }
 
-    public void BackToMainMenu()
+    public void BackToPrevScene()
     {
         Debug.Log(SceneManager.GetActiveScene().buildIndex - 1);
         SceneTransition.Instance.TransitionLeave();
@@ -26,18 +26,28 @@ public class PauseMenu : MonoBehaviour
             if (!isOpen && player.isDead == false)
             {
                 Time.timeScale = 0f;
-                cardSlotsGroup.interactable = false;
-                cardSlotsGroup.blocksRaycasts = false;
+                if (cardSlotsGroup != null)
+                {
+                    cardSlotsGroup.interactable = false;
+                    cardSlotsGroup.blocksRaycasts = false;
+                }
+                
                 gameObject.SetActive(true);
                 isOpen = true;
             }
             else if(player.isDead == false)
             {
                 Time.timeScale = 1f;
-                cardSlotsGroup.interactable = true;
-                cardSlotsGroup.blocksRaycasts = true;
+                if (cardSlotsGroup != null)
+                {
+                    cardSlotsGroup.interactable = true;
+                    cardSlotsGroup.blocksRaycasts = true;
+                }
                 gameObject.SetActive(false);
-                optionPanel.SetActive(false);
+                if(optionPanel != null)
+                {
+                    optionPanel.SetActive(false);
+                }
                 isOpen = false;
             }
         }

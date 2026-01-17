@@ -6,7 +6,7 @@ public class SceneTransition : MonoBehaviour
 {
     public static SceneTransition Instance;
     [SerializeField] private Animator TransitionAnimator;
-    [SerializeField] private CanvasGroup canvasGroup;
+    //[SerializeField] private CanvasGroup canvasGroup;
 
     private void Awake()
     {
@@ -43,6 +43,7 @@ public class SceneTransition : MonoBehaviour
         yield return new WaitForSecondsRealtime(1f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         TransitionAnimator.SetTrigger("Start");
+        Time.timeScale = 1f;
     }
 
     IEnumerator TransitionLevelLeave()
@@ -51,6 +52,7 @@ public class SceneTransition : MonoBehaviour
         yield return new WaitForSecondsRealtime(1f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         TransitionAnimator.SetTrigger("Start");
+        Time.timeScale = 1f;
     }
 
     IEnumerator TransitionLevelRestart()
@@ -59,5 +61,6 @@ public class SceneTransition : MonoBehaviour
         yield return new WaitForSecondsRealtime(1f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         TransitionAnimator.SetTrigger("Start");
+        Time.timeScale = 1f;
     }
 }
